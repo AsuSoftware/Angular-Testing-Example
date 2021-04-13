@@ -1,8 +1,11 @@
-
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class TodoService {
+
   constructor(private http: HttpClient) {
   }
 
@@ -11,6 +14,10 @@ export class TodoService {
   }
 
   getTodos() {
+    return this.http.get('...');
+  }
+
+  getTodosPromise() {
     return this.http.get('...');
   }
 
